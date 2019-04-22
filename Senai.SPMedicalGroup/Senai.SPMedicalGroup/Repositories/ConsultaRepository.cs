@@ -45,5 +45,46 @@ namespace Senai.SPMedicalGroup.Repositories
                 return ctx.Consultas.ToList();
             }
         }
+
+        public Consultas BuscarPorId(int id)
+        {
+            using (SPMedicalGroupContext ctx = new SPMedicalGroupContext())
+            {
+                return ctx.Consultas.Find(id);
+            }
+        }
+
+        public List<Consultas> BuscarPorIdMedico(int idmedico)
+        {
+            using (SPMedicalGroupContext ctx = new SPMedicalGroupContext())
+            {
+                return ctx.Consultas.Where(i => i.IdMedico == idmedico).ToList();
+            }
+        }
+
+        public List<Consultas> BuscarPorIdProntuario(int idprontuario)
+        {
+            using (SPMedicalGroupContext ctx = new SPMedicalGroupContext())
+            {
+                return ctx.Consultas.Where(i => i.IdProntuario == idprontuario).ToList();
+            }
+        }
+
+        public List<Consultas> BuscarConsultasMedico(int idmedico)
+        {
+            using (SPMedicalGroupContext ctx = new SPMedicalGroupContext())
+            {
+                return ctx.Consultas.Where(i => i.IdMedico == idmedico).ToList();
+            }
+        }
+
+        public List<Consultas> BuscarConsultasProntuario(int idprontuario)
+        {
+            using (SPMedicalGroupContext ctx = new SPMedicalGroupContext())
+            {
+                return ctx.Consultas.Where(i => i.IdProntuario == idprontuario).ToList();
+            }
+        }
+
     }
 }

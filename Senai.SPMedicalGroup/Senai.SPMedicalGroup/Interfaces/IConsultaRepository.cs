@@ -10,9 +10,11 @@ namespace Senai.SPMedicalGroup.Interfaces
     {
         void Agendar(Consultas consulta);
 
-        void Atualizar(Consultas consulta);
+        void Atualizar(int id, Consultas consulta);
 
         List<Consultas> Listar();
+
+        Consultas BuscarPorId(int id);
 
         /// <summary>
         /// Busca um Médico pelo Id
@@ -41,5 +43,6 @@ namespace Senai.SPMedicalGroup.Interfaces
         /// <param name="idprontuario">Id</param>
         /// <returns>Retorna Consultas</returns>
         List<Consultas> BuscarConsultasProntuario(int idprontuario);
+
     }
 }
