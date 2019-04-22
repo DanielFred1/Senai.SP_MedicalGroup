@@ -46,6 +46,25 @@ namespace Senai.SPMedicalGroup.Repositories
             }
         }
 
+        public void Cancelar(int id)
+        {
+            using (SPMedicalGroupContext ctx = new SPMedicalGroupContext())
+            {
+                Consultas consulta = new Consultas();
+
+                consulta.Id = BuscarPorId(id).Id;
+                consulta.IdMedico = BuscarPorId(id).IdMedico;
+                consulta.IdProntuario = BuscarPorId(id).IdProntuario;
+                consulta.DataHora = BuscarPorId(id).DataHora;
+                consulta.Descricao = BuscarPorId(id).Descricao;
+                consulta.Status = "Cancelada";
+
+
+                ctx.Consultas.Update(consulta);
+                ctx.SaveChanges();
+            }
+        }
+
         public Consultas BuscarPorId(int id)
         {
             using (SPMedicalGroupContext ctx = new SPMedicalGroupContext())

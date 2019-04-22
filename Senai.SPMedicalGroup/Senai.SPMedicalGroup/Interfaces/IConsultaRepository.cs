@@ -16,6 +16,8 @@ namespace Senai.SPMedicalGroup.Interfaces
 
         Consultas BuscarPorId(int id);
 
+        void Cancelar(int id);
+
         /// <summary>
         /// Busca um Médico pelo Id
         /// </summary>

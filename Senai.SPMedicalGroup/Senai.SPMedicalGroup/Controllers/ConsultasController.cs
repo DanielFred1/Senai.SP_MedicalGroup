@@ -56,6 +56,25 @@ namespace Senai.SPMedicalGroup.Controllers
             }
         }
 
+        [HttpPut("cancelar/{id}")]
+        public IActionResult Cancelar(int id)
+        {
+            try
+            {
+                if (ConsultaRepositorio.BuscarPorId(id) == null)
+                {
+                    return NotFound("Consulta não encontrada!");
+                }
+
+                ConsultaRepositorio.Cancelar(id);
+                return Ok("Consulta cancelada com sucesso!");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("Ocorreu um erro, não foi possível cancelar a consulta!");
+            }
+        }
+
         [HttpGet("listar")]
         public IActionResult Listar(int id)
         {
