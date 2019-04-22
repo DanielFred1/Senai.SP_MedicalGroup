@@ -10,7 +10,7 @@ namespace Senai.SPMedicalGroup.Interfaces
     {
         void Agendar(Consultas consulta);
 
-        void Atualizar(int id, Consultas consulta);
+        void Atualizar(int id);
 
         List<Consultas> Listar();
 

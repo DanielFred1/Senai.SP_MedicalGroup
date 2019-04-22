@@ -14,5 +14,7 @@ namespace Senai.SPMedicalGroup.Domains
 
         public Medicos IdMedicoNavigation { get; set; }
         public Prontuarios IdProntuarioNavigation { get; set; }
+
     }
+
 }

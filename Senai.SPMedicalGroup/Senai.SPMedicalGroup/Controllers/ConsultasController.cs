@@ -38,7 +38,7 @@ namespace Senai.SPMedicalGroup.Controllers
         }
 
         [HttpPut("atualizar/{id}")]
-        public IActionResult Atualizar(int id, Consultas consulta)
+        public IActionResult Atualizar(int id)
         {
             try
             {
@@ -47,7 +47,7 @@ namespace Senai.SPMedicalGroup.Controllers
                     return NotFound("Consulta não encontrada!");
                 }
 
-                ConsultaRepositorio.Atualizar(id, consulta);
+                ConsultaRepositorio.Atualizar(id);
                 return Ok("Consulta atualizada com sucesso!");
             }
             catch (Exception ex)
