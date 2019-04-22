@@ -39,9 +39,9 @@ namespace Senai.SPMedicalGroup
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v2.1", new Info
+                c.SwaggerDoc("v1", new Info
                 {
-                    Version = "v2.1",
+                    Version = "v1",
                     Title = "WEB API SP Medical Group",
                     TermsOfService = "Apenas para uso acadêmico",
                     Description = "Projeto de Web API para fins acadêmicos, utilizando DataBase SQL Server",
@@ -49,7 +49,7 @@ namespace Senai.SPMedicalGroup
                     {
                         Name = "Daniel Frederic",
                         Email = "dsena.frederic@gmail.com",
-                        Url = "https://github.com/DanielFred1 - https://www.linkedin.com/in/daniel-frederic-12602b122/"
+                        Url = "https://github.com/DanielFred1"
                     }
                 });
             });
@@ -86,7 +86,7 @@ namespace Senai.SPMedicalGroup
 
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v2.1/swagger.json", "SP Medical Group");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
             });
 
             app.UseAuthentication();

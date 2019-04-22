@@ -24,7 +24,7 @@ namespace Senai.SPMedicalGroup.Controllers
         }
 
         [HttpGet("listar")]
-        public IActionResult Listar(Medicos medico)
+        public IActionResult Listar(int id)
         {
             try
             {

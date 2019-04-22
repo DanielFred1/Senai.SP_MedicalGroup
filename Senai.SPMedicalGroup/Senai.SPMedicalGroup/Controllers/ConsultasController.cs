@@ -56,6 +56,19 @@ namespace Senai.SPMedicalGroup.Controllers
             }
         }
 
+        [HttpGet("listar")]
+        public IActionResult Listar(int id)
+        {
+            try
+            {
+                return Ok(ConsultaRepositorio.Listar());
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("Consultas não encontradas!");
+            }
+        }
+
         [HttpGet("buscarporidmedico/{idmedico}")]
         public IActionResult BuscarPorIdMedico(int idmedico)
         {

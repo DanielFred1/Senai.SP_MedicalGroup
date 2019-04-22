@@ -68,8 +68,8 @@ VALUES	(7, 3, '20/01/2019 15:00:00','Consulta', 'Realizada')
 
 SELECT * FROM PRONTUARIOS;
 
-select * from MEDICOS;
+SELECT * FROM MEDICOS;
 
-select * from USUARIOS;
+SELECT * FROM USUARIOS;
 
-select * from CONSULTAS;
+SELECT * FROM CONSULTAS;

@@ -27,7 +27,7 @@ namespace Senai.SPMedicalGroup.Domains
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Data Source=.\\SQLEXPRESS; Initial Catalog =SENAI_SPMEDICALGROUP ; user id = sa ; pwd = 132");
+                optionsBuilder.UseSqlServer("Data Source=.\\SQLEXPRESS01; Initial Catalog =SENAI_SPMEDICALGROUP ; Integrated Security =True");
             }
         }
 
