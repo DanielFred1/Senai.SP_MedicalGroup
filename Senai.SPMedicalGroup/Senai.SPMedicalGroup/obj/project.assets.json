@@ -12779,11 +12779,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\45867182851\\source\\repos\\Senai.SPMedicalGroup\\Senai.SPMedicalGroup\\Senai.SPMedicalGroup.csproj",
+      "projectUniqueName": "C:\\Users\\45867182851\\Desktop\\Senai.SP_MedicalGroup\\Senai.SPMedicalGroup\\Senai.SPMedicalGroup\\Senai.SPMedicalGroup.csproj",
       "projectName": "Senai.SPMedicalGroup",
-      "projectPath": "C:\\Users\\45867182851\\source\\repos\\Senai.SPMedicalGroup\\Senai.SPMedicalGroup\\Senai.SPMedicalGroup.csproj",
+      "projectPath": "C:\\Users\\45867182851\\Desktop\\Senai.SP_MedicalGroup\\Senai.SPMedicalGroup\\Senai.SPMedicalGroup\\Senai.SPMedicalGroup.csproj",
       "packagesPath": "C:\\Users\\45867182851\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\45867182851\\source\\repos\\Senai.SPMedicalGroup\\Senai.SPMedicalGroup\\obj\\",
+      "outputPath": "C:\\Users\\45867182851\\Desktop\\Senai.SP_MedicalGroup\\Senai.SPMedicalGroup\\Senai.SPMedicalGroup\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
