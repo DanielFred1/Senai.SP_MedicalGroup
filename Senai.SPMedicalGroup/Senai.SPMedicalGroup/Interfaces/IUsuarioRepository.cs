@@ -12,6 +12,10 @@ namespace Senai.SPMedicalGroup.Interfaces
 
         void Cadastrar(Usuarios usuario);
 
+        void Atualizar(Usuarios usuario);
+
+        void Deletar(int id);
+
         Usuarios BuscarPorEmailESenha(string email, string senha);
     }
 }

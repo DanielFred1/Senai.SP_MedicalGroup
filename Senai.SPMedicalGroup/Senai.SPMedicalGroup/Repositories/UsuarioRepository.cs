@@ -27,6 +27,33 @@ namespace Senai.SPMedicalGroup.Repositories
             }
         }
 
+        public void Atualizar(Usuarios usuario)
+        {
+            using (SPMedicalGroupContext ctx = new SPMedicalGroupContext())
+            {
+                Usuarios informacaoUsuario = new Usuarios();
+
+                informacaoUsuario.Id = usuario.Id;
+                informacaoUsuario.Email = usuario.Email;
+                informacaoUsuario.Senha = usuario.Senha;
+                informacaoUsuario.IdTipoUsuario = usuario.IdTipoUsuario;
+
+                ctx.Usuarios.Update(usuario);
+                ctx.SaveChanges();
+            }
+        }
+
+        public void Deletar(int id)
+        {
+            using (SPMedicalGroupContext ctx = new SPMedicalGroupContext())
+            {
+                Usuarios usuario = ctx.Usuarios.Find(id);
+
+                ctx.Usuarios.Remove(usuario);
+                ctx.SaveChanges();
+            }
+        }
+
         public Usuarios BuscarPorEmailESenha(string email, string senha)
         {
             using (SPMedicalGroupContext ctx = new SPMedicalGroupContext())

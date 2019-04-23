@@ -32,7 +32,7 @@ namespace Senai.SPMedicalGroup.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest("Lista não encontrada.");
+                return BadRequest("Lista de usuarios não encontrada.");
             }
         }
 
@@ -43,11 +43,39 @@ namespace Senai.SPMedicalGroup.Controllers
             try
             {
                 UsuarioRepositorio.Cadastrar(usuario);
-                return Ok("Cadastrado com sucesso!");
+                return Ok("Usuario cadastrado com sucesso!");
             }
             catch (Exception ex)
             {
-                return BadRequest("Problema ao Cadastrar!");
+                return BadRequest("Ocorreu um erro, não foi possível cadastrar usuario.");
+            }
+        }
+
+        [HttpPut("atualizar")]
+        public IActionResult Atualizar(Usuarios usuario)
+        {
+            try
+            {
+                UsuarioRepositorio.Atualizar(usuario);
+                return Ok("Dados atualizados com sucesso!");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("Ocorreu um erro, não foi possível atualizar os dados do usuário.");
+            }
+        }
+
+        [HttpDelete("deletar/{id}")]
+        public IActionResult Deletar(int id)
+        {
+            try
+            {
+                UsuarioRepositorio.Deletar(id);
+                return Ok("Usuario removido do sistema com sucesso!");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("Ocorreu um erro, não foi possível remover o usuario.");
             }
         }
 
