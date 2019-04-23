@@ -37,18 +37,27 @@ namespace Senai.SPMedicalGroup.Controllers
             }
         }
 
-        [HttpPut("atualizar/{id}")]
-        public IActionResult Atualizar(int id)
+        [HttpDelete("deletar/{id}")]
+        public IActionResult Deletar(int id)
         {
             try
             {
-                if (ConsultaRepositorio.BuscarPorId(id) == null)
-                {
-                    return NotFound("Consulta não encontrada!");
-                }
+                ConsultaRepositorio.Deletar(id);
+                return Ok("Consulta removida do sistema.");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("Não foi possível deletar a consulta!");
+            }
+        }
 
-                ConsultaRepositorio.Atualizar(id);
-                return Ok("Consulta atualizada com sucesso!");
+        [HttpPut("atualizar")]
+        public IActionResult Atualizar(Consultas consulta)
+        {
+            try
+            {
+                ConsultaRepositorio.Atualizar(consulta);
+                return Ok("Consulta atualizada com sucesso");
             }
             catch (Exception ex)
             {

@@ -18,18 +18,20 @@ namespace Senai.SPMedicalGroup.Repositories
             }
         }
 
-        public void Atualizar(int id)
+        public void Atualizar(Consultas consulta)
         {
             using (SPMedicalGroupContext ctx = new SPMedicalGroupContext())
             {
-                Consultas consulta = new Consultas();
+                Consultas InformacaoConsulta = new Consultas();
 
-                consulta.Id = BuscarPorId(id).Id;
-                consulta.IdMedico = BuscarPorId(id).IdMedico;
-                consulta.IdProntuario = BuscarPorId(id).IdProntuario;
-                consulta.DataHora = BuscarPorId(id).DataHora;
-                consulta.Descricao = BuscarPorId(id).Descricao;
-                consulta.Status = BuscarPorId(id).Status;
+                InformacaoConsulta.IdMedico = consulta.IdMedico;
+                InformacaoConsulta.IdProntuario = consulta.IdProntuario;
+                InformacaoConsulta.DataHora = consulta.DataHora;
+                InformacaoConsulta.Status = consulta.Status;
+                if (InformacaoConsulta.Descricao != null)
+                {
+                    InformacaoConsulta.Descricao = consulta.Descricao;
+                }
 
                 ctx.Consultas.Update(consulta);
                 ctx.SaveChanges();
@@ -58,6 +60,17 @@ namespace Senai.SPMedicalGroup.Repositories
                 consulta.Status = "Cancelada";
 
                 ctx.Consultas.Update(consulta);
+                ctx.SaveChanges();
+            }
+        }
+
+        public void Deletar(int id)
+        {
+            using (SPMedicalGroupContext ctx = new SPMedicalGroupContext())
+            {
+                Consultas consulta = ctx.Consultas.Find(id);
+
+                ctx.Consultas.Remove(consulta);
                 ctx.SaveChanges();
             }
         }

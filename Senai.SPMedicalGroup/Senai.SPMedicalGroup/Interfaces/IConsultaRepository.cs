@@ -10,13 +10,15 @@ namespace Senai.SPMedicalGroup.Interfaces
     {
         void Agendar(Consultas consulta);
 
-        void Atualizar(int id);
+        void Atualizar(Consultas consulta);
 
         List<Consultas> Listar();
 
         Consultas BuscarPorId(int id);
 
         void Cancelar(int id);
+
+        void Deletar(int id);
 
         /// <summary>
         /// Busca um Médico pelo Id
