@@ -23,6 +23,48 @@ namespace Senai.SPMedicalGroup.Controllers
             MedicoRepositorio = new MedicoRepository();
         }
 
+        [HttpPost("cadastrar")]
+        public IActionResult Cadastrar(Medicos medico)
+        {
+            try
+            {
+                MedicoRepositorio.Cadastrar(medico);
+                return Ok("Medico cadastrado com sucesso!");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("Ocorreu um erro, não foi possível cadastrar o(a) Medico(a).");
+            }
+        }
+
+        [HttpPut("atualizar")]
+        public IActionResult Atualizar(Medicos medico)
+        {
+            try
+            {
+                MedicoRepositorio.Atualizar(medico);
+                return Ok("Dados atualizados com sucesso!");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("Ocorreu um erro, não foi possível atualizar dados do Medico(a).");
+            }
+        }
+
+        [HttpDelete("deletar/{id}")]
+        public IActionResult Deletar(int id)
+        {
+            try
+            {
+                MedicoRepositorio.Deletar(id);
+                return Ok("Medico(a) removido(a) do sistema com sucesso!");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("Ocorreu um erro, não foi possível remover Medico(a) do sistema.");
+            }
+        }
+
         [HttpGet("listar")]
         public IActionResult Listar(int id)
         {
@@ -32,7 +74,7 @@ namespace Senai.SPMedicalGroup.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest("Lista não encontrada.");
+                return BadRequest("Lista de Medicos não encontrada.");
             }
         }
     }

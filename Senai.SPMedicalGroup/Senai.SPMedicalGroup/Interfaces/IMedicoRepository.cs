@@ -8,6 +8,12 @@ namespace Senai.SPMedicalGroup.Interfaces
 {
     interface IMedicoRepository
     {
+        void Cadastrar(Medicos medico);
+
+        void Atualizar(Medicos medico);
+
+        void Deletar(int id);
+
         List<Medicos> Listar();
     }
 }
