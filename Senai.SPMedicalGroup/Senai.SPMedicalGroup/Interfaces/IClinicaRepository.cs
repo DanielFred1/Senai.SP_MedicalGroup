@@ -9,5 +9,11 @@ namespace Senai.SPMedicalGroup.Interfaces
     interface IClinicaRepository
     {
         void Cadastrar(Clinicas clinica);
+
+        void Atualizar(Clinicas clinica);
+
+        void Deletar(int id);
+
+        List<Clinicas> Listar();
     }
 }

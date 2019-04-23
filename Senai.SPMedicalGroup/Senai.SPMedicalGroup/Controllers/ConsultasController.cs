@@ -57,7 +57,7 @@ namespace Senai.SPMedicalGroup.Controllers
             try
             {
                 ConsultaRepositorio.Atualizar(consulta);
-                return Ok("Consulta atualizada com sucesso");
+                return Ok("Consulta atualizada com sucesso!");
             }
             catch (Exception ex)
             {
@@ -93,7 +93,7 @@ namespace Senai.SPMedicalGroup.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest("Consultas não encontradas!");
+                return BadRequest("Lista de consultas não encontrada!");
             }
         }
 
@@ -106,7 +106,7 @@ namespace Senai.SPMedicalGroup.Controllers
             }
             catch (Exception ex)
             {
-                return NotFound("Não foi possível encontrar Médico!");
+                return NotFound("Médico não encontrado!");
             }
         }
 
@@ -119,7 +119,7 @@ namespace Senai.SPMedicalGroup.Controllers
             }
             catch (Exception ex)
             {
-                return NotFound("Não foi possível encontrar Prontuario!");
+                return NotFound("Prontuario não encontrado!");
             }
         }
 

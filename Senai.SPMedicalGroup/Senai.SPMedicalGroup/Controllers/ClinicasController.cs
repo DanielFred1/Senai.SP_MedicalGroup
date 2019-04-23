@@ -33,7 +33,48 @@ namespace Senai.SPMedicalGroup.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest("Problema ao cadastrar!");
+                return BadRequest("Não foi possível efetuar o cadastro!");
+            }
+        }
+
+        [HttpPut("atualizar")]
+        public IActionResult Atualizar(Clinicas clinica)
+        {
+            try
+            {
+                ClinicaRepositorio.Atualizar(clinica);
+                return Ok("Dados atualizados com sucesso!");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("Não foi possível atualizar os dados da clínica!");
+            }
+        }
+
+        [HttpDelete("deletar/{id}")]
+        public IActionResult Deletar(int id)
+        {
+            try
+            {
+                ClinicaRepositorio.Deletar(id);
+                return Ok("Clinica removida do sistema.");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("Não foi possível remover a clínica!");
+            }
+        }
+
+        [HttpGet("listar")]
+        public IActionResult Listar()
+        {
+            try
+            {
+                return Ok(ClinicaRepositorio.Listar());
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("Lista de clínicas não encontrada!");
             }
         }
     }
