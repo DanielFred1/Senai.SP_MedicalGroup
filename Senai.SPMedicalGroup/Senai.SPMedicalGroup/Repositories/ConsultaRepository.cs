@@ -27,11 +27,8 @@ namespace Senai.SPMedicalGroup.Repositories
                 InformacaoConsulta.IdMedico = consulta.IdMedico;
                 InformacaoConsulta.IdProntuario = consulta.IdProntuario;
                 InformacaoConsulta.DataHora = consulta.DataHora;
+                InformacaoConsulta.Descricao = "Consulta Realizada";
                 InformacaoConsulta.Status = consulta.Status;
-                if (InformacaoConsulta.Descricao != null)
-                {
-                    InformacaoConsulta.Descricao = consulta.Descricao;
-                }
 
                 ctx.Consultas.Update(consulta);
                 ctx.SaveChanges();
