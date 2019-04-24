@@ -23,6 +23,7 @@ namespace Senai.SPMedicalGroup.Controllers
             UsuarioRepositorio = new UsuarioRepository();
         }
 
+        [Authorize(Roles = "1")]
         [HttpGet("listar")]
         public IActionResult Listar(int id)
         {
@@ -36,7 +37,7 @@ namespace Senai.SPMedicalGroup.Controllers
             }
         }
 
-
+        [Authorize(Roles = "1")]
         [HttpPost("cadastrar")]
         public IActionResult Cadastrar(Usuarios usuario)
         {
@@ -51,6 +52,7 @@ namespace Senai.SPMedicalGroup.Controllers
             }
         }
 
+        [Authorize(Roles = "1")]
         [HttpPut("atualizar")]
         public IActionResult Atualizar(Usuarios usuario)
         {
@@ -65,6 +67,7 @@ namespace Senai.SPMedicalGroup.Controllers
             }
         }
 
+        [Authorize(Roles = "1")]
         [HttpDelete("deletar/{id}")]
         public IActionResult Deletar(int id)
         {

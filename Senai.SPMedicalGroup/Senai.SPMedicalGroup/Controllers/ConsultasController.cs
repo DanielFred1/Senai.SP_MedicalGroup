@@ -23,6 +23,7 @@ namespace Senai.SPMedicalGroup.Controllers
             ConsultaRepositorio = new ConsultaRepository();
         }
 
+        [Authorize(Roles = "1")]
         [HttpPost("agendar")]
         public IActionResult Agendar(Consultas consulta)
         {
@@ -37,6 +38,7 @@ namespace Senai.SPMedicalGroup.Controllers
             }
         }
 
+        [Authorize(Roles = "1")]
         [HttpDelete("deletar/{id}")]
         public IActionResult Deletar(int id)
         {
@@ -51,6 +53,7 @@ namespace Senai.SPMedicalGroup.Controllers
             }
         }
 
+        [Authorize(Roles = "1, 2")]
         [HttpPut("atualizar")]
         public IActionResult Atualizar(Consultas consulta)
         {
@@ -65,6 +68,7 @@ namespace Senai.SPMedicalGroup.Controllers
             }
         }
 
+        [Authorize(Roles = "1")]
         [HttpPut("cancelar/{id}")]
         public IActionResult Cancelar(int id)
         {
@@ -84,6 +88,7 @@ namespace Senai.SPMedicalGroup.Controllers
             }
         }
 
+        [Authorize(Roles = "1")]
         [HttpGet("listar")]
         public IActionResult Listar(int id)
         {
@@ -97,6 +102,7 @@ namespace Senai.SPMedicalGroup.Controllers
             }
         }
 
+        [Authorize(Roles = "1, 2")]
         [HttpGet("buscarporidmedico/{idmedico}")]
         public IActionResult BuscarPorIdMedico(int idmedico)
         {
@@ -110,6 +116,7 @@ namespace Senai.SPMedicalGroup.Controllers
             }
         }
 
+        [Authorize(Roles = "1, 3")]
         [HttpGet("buscarporidprontuario/{idprontuario}")]
         public IActionResult BuscarPorIdProntuario(int idprontuario)
         {

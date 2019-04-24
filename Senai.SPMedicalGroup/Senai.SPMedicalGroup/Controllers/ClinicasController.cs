@@ -23,6 +23,7 @@ namespace Senai.SPMedicalGroup.Controllers
             ClinicaRepositorio = new ClinicaRepository();
         }
 
+        [Authorize(Roles = "1")]
         [HttpPost("cadastrar")]
         public IActionResult Cadastrar(Clinicas clinica)
         {
@@ -37,6 +38,7 @@ namespace Senai.SPMedicalGroup.Controllers
             }
         }
 
+        [Authorize(Roles = "1")]
         [HttpPut("atualizar")]
         public IActionResult Atualizar(Clinicas clinica)
         {
@@ -51,6 +53,7 @@ namespace Senai.SPMedicalGroup.Controllers
             }
         }
 
+        [Authorize(Roles = "1")]
         [HttpDelete("deletar/{id}")]
         public IActionResult Deletar(int id)
         {
@@ -65,6 +68,7 @@ namespace Senai.SPMedicalGroup.Controllers
             }
         }
 
+        [Authorize(Roles = "1")]
         [HttpGet("listar")]
         public IActionResult Listar()
         {
